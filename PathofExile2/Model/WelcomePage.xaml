@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PathofExile2.WelcomePage"
+             xmlns:pages="clr-namespace:PathofExile2.Model">
+    <ContentPage.Content >
+        <StackLayout BackgroundColor="#3b2f2f">
+            <Image 
+                Source="https://static.wikia.nocookie.net/pathofexile_gamepedia/images/e/e6/Site-logo.png/revision/latest?cb=20210506210316">
+            </Image>
+            <Label TextColor="Orange" Text="Welcome to PoE Collection!"
+                Margin="0,20,0,20"
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout  BackgroundColor="Black" HorizontalOptions="Center">
+                <Label TextColor="Orange"  HorizontalOptions="Center" Text="Home to:"></Label>
+                <Label TextColor="Orange" HorizontalOptions="Center" Text="A great database of items!"></Label>
+                <Label TextColor="Orange" HorizontalOptions="Center" Text="Soon to be home to:"></Label>
+                <Label TextColor="Orange" HorizontalOptions="Center" Text="Skill Tree Planer"></Label>
+                <Label TextColor="Orange" HorizontalOptions="Center" Text="Market Watcher"></Label>
+                <Label TextColor="Orange" HorizontalOptions="Center" Text="A smooth and easy to navigate UI"></Label>
+            </StackLayout>
+            <Grid Margin="0,20,0,0">
+                <Button Grid.Row="0"  Grid.Column="0" CornerRadius="10" TextColor="Orange" Text="Item Database!" Clicked="GoToCollection"></Button>
+                <Button Grid.Row="0"  Grid.Column="1" CornerRadius="10" TextColor="Orange" Text="Skill Tree Planner!" Clicked="GoToSkillTree"></Button>
+                <Button Grid.Row="1"  Grid.Column="0" CornerRadius="10" TextColor="Orange" Text="Market Watcher!" Clicked="GoToMarketWatcher"></Button>
+                <Button Grid.Row="1"  Grid.Column="1" CornerRadius="10" TextColor="Orange" Text="Expedition League!" Clicked="GoToExpedition"></Button>
+                <Button Grid.Row="2"  Grid.ColumnSpan="2" CornerRadius="10" TextColor="Orange" Text="Click here to login!" Clicked="GoToLogin"></Button>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

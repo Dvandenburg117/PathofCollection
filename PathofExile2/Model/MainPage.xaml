@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PathofExile2.MainPage">
+
+    <StackLayout BackgroundColor="#3b2f2f" Margin="10,10,10,0">
+        <SearchBar TextColor="Orange" PlaceholderColor="Orange" Placeholder="Search..."
+                   TextChanged="SearchBar_TextChanged"></SearchBar>
+        <ListView x:Name="weaponList"
+                  Margin="0"
+                  IsGroupingEnabled="true"
+                  GroupDisplayBinding="{Binding weaponClass}"
+                  ItemTapped="weaponList_ItemTapped"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="weaponList_Refreshing"
+                  SeparatorColor="Orange"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell TextColor="Orange" Text="{Binding weaponName}" Detail="{Binding weaponType}" ImageSource="{Binding imageURL}">
+                        <ImageCell.ContextActions>
+                            <MenuItem Text="Wikipage" Clicked="MenuItem_Clicked" CommandParameter="{Binding .}"></MenuItem>
+                            <MenuItem Text="Delete" Clicked="MenuItem_Deleted" IsDestructive="True" CommandParameter="{Binding .}"></MenuItem>
+                        </ImageCell.ContextActions>
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+
+</ContentPage>
